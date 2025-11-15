@@ -39,11 +39,10 @@ const authMiddleware = async (req, res, next) => {
     };
 
     req.user = formatedUser;
-    next()
+    next();
   } catch (e) {
-    return res.status(401).json({message: 'Invalid Token'})
+    return res.status(401).json({ message: "Invalid Token" });
   }
 };
 
-
-module.exports = authMiddleware
+module.exports = authMiddleware;
