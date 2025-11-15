@@ -45,9 +45,7 @@ const register = async (req, res) => {
       role: newUser.role.roleName,
     };
 
-    req.logUser = formatedUser;
-
-    console.log(req.logUser);
+    req.user = formatedUser;
 
     const token = jwt.sign(formatedUser, secretKey, { expiresIn: "1h" });
 
